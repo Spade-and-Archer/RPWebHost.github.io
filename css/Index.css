@@ -5,10 +5,11 @@
   display: flex;
 
 }
-#FeatureHolder{
+#fholder{
   display: inline-block;
   width:100%;
   height: fit-content;
+  text-align: center;
 }
 #FrontPageLogo{
   width: 500px;
@@ -41,9 +42,28 @@
   background-color:#7cb342;
   margin:10px;
 }
+.feature-soon-button{
+  background-color:#fb8c00;
+  margin:10px;
+}
+.feature-later-button{
+  background-color:#f4511e;
+  margin:10px;
+}
+.feature-hidden-icon{
+  display: none;
+}
+.feature-active-icon{
+  display: inline-flex !important;
+}
 .feature-icon-container{
   text-align: right;
 }
 .feature-card-header{
   font-size: 1.5rem;
 }
+.featurebox{
+  display:inline-flex;
+  text-align: center;
+}
+.

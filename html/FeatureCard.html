@@ -1,34 +1,104 @@
-<!DOCTYPE html>
-  <div class="feature-card mdc-card">
-    <div class="mdc-card__primary-action">
-      <div style="padding:10px">
-        <p> <span class="mdc-theme--text-primary-on-light feature-card-header" id="fc-blank-title">Painting!</span></p>
-      </div>
-      <div class="feature-art mdc-card__media mdc-card__media--16-9" id="fc-blank-image">
-        <div class="feature-icon-container mdc-card__media-content">
-          <button class="feature-done-button mdc-fab" aria-label="done">
-          <span class="mdc-fab__icon material-icons" id="fc-blank-icon">done</span></button>
-        </div>
-      </div>
-      <div style="padding:10px">
-        <p> <span class="mdc-text-field--focused" id="fc-blank-description">
-          Description
-        </span></p>
-      </div>
 
+<div class="feature-card mdc-card" hidden="hidden">
+  <div class="mdc-card__primary-action">
+    <div style="padding:10px">
+      <p> <span class="mdc-theme--text-primary-on-light feature-card-header" id="fc-blank-title">Painting!</span></p>
     </div>
-    <div class="mdc-card__actions">
-      <div class="mdc-card__action-buttons">
-        <button class="mdc-button mdc-card__action mdc-card__action--button">
-          <span class="mdc-button__label">Action 1</span>
-        </button>
-        <button class="mdc-button mdc-card__action mdc-card__action--button">
-          <span class="mdc-button__label">Action 2</span>
-        </button>
+    <div class="feature-art mdc-card__media mdc-card__media--16-9" id="fc-blank-image">
+      <div class="feature-icon-container mdc-card__media-content">
+        <button class="feature-done-button mdc-fab feature-hidden-icon" id="status-done" aria-label="done">
+          <span class="mdc-fab__icon material-icons ">done</span></button>
+        <button  class="feature-soon-button mdc-fab feature-hidden-icon" id="status-soon" aria-label="soon">
+          <span class="mdc-fab__icon material-icons">query_builder</span></button>
+        <button class="feature-later-button mdc-fab feature-hidden-icon" id="status-later" aria-label="later">
+          <span class="mdc-fab__icon material-icons" >looks</span></button>
       </div>
-      <div class="mdc-card__action-icons">
-        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
-        <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
-      </div>
+    </div>
+    <div style="padding:10px">
+      <p> <span class="mdc-text-field--focused" id="fc-blank-description">
+        Description
+      </span></p>
+    </div>
+
+  </div>
+  <div class="mdc-card__actions">
+    <div class="mdc-card__action-buttons">
+      <button class="mdc-button mdc-card__action mdc-card__action--button">
+        <span class="mdc-button__label">Action 1</span>
+      </button>
+      <button class="mdc-button mdc-card__action mdc-card__action--button">
+        <span class="mdc-button__label">Action 2</span>
+      </button>
+    </div>
+    <div class="mdc-card__action-icons">
+      <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
+      <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
     </div>
   </div>
+</div>
+<script type="text/javascript">
+  const features = [
+    {FeatureTitle : "Painting!",
+      FeatureImg : "img/LayerOfDetail 1.jpg",
+      FeatureDescription : "Allows you to create paintings from image files in under 5 minutes",
+      FeatureStatus : "done"},
+
+    {FeatureTitle : "Custom Map Markers",
+      FeatureImg : "img/LayerOfDetail 1.jpg",
+      FeatureDescription : "Records the position of your screenshots and allows you to add notes to your map that will be overlayed on your regular map whenever you hit G",
+      FeatureStatus : "soon"},
+
+    {FeatureTitle : "Loot Highlighting",
+      FeatureImg : "img/LayerOfDetail 1.jpg",
+      FeatureDescription : "Will highlight red any loot in your inventory that is lower value than the loot chest you are looking at and highlight green any high-value loot you should prioritize",
+      FeatureStatus : "soon"},
+
+    {FeatureTitle : "Guitar Macro",
+      FeatureImg : "img/LayerOfDetail 1.jpg",
+      FeatureDescription : "Make it so you can jam out to sick tunes on your way to your target",
+      FeatureStatus : "soon"},
+
+    {FeatureTitle : "Minimap and Wayfinding",
+      FeatureImg : "img/LayerOfDetail 1.jpg",
+      FeatureDescription : "Overlaying a small map and compass in the corner of the screen to help you see your immediate surroundings without having to hit G",
+      FeatureStatus : "soon"},
+
+    {FeatureTitle : "Player tracking",
+      FeatureImg : "img/LayerOfDetail 1.jpg",
+      FeatureDescription : "Get alerts when an enemy clan comes online, keep track of your enemies changing usernames, and view trends in your target's online hours so you can attack when they least expect it",
+      FeatureStatus : "soon"},
+
+  ];
+  for(let x = 0; x < features.length; x = x + 1){
+    let i = x;
+    console.log(i);
+    //let newElement = document.createElement("div");
+    //newElement.id = "featurebox-" + i.toString();
+    //newElement.className = "featurebox";
+    //document.getElementById("fholder").appendChild(newElement);
+    //$("#PageBody").add(newElement)
+
+    $("#featurebox-" + i + " #fc-blank-title").text(features[i].FeatureTitle);
+    $("#featurebox-" + i + " #fc-blank-title").id = "#fc-title-" + i.toString();
+
+    $("#featurebox-" + i + " #fc-blank-description").text(features[i].FeatureDescription);
+    $("#featurebox-" + i + " #fc-blank-description").id = "#fc-description-" + i.toString();
+
+    $("#featurebox-" + i + " #fc-blank-image").style = "url(" + features[i].FeatureImg + ")";
+    $("#featurebox-" + i + " #fc-blank-image").id = "#fc-image-" + i.toString();
+
+    $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).addClass("feature-active-icon");
+    $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).id = "#status-" + features[i].FeatureStatus + i.toString();
+
+
+  }
+
+
+
+
+  //$("#fc-blank-icon").innerText = features[i].FeatureStatus;
+  //$("#fc-blank-icon").id = "#fc-icon-" + i.toString();
+
+
+  //$(selector).removeClass("feature-hidden-icon");
+</script>
