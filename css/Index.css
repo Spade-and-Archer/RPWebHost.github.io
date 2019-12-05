@@ -5,6 +5,11 @@
   display: flex;
 
 }
+#FeatureHolder{
+  display: inline-block;
+  width:100%;
+  height: fit-content;
+}
 #FrontPageLogo{
   width: 500px;
   margin: auto;
@@ -19,4 +24,26 @@
 }
 #download-tab:hover{
   background-color: #4b830d;
+}
+#PageBody{
+  width:100%;
+}
+
+.feature-art{
+  background-image:url("img/LayerOfDetail 1.jpg");
+  width: 400px;
+}
+.feature-card{
+  margin: 1rem;
+  max-width: 400px;
+}
+.feature-done-button{
+  background-color:#7cb342;
+  margin:10px;
+}
+.feature-icon-container{
+  text-align: right;
+}
+.feature-card-header{
+  font-size: 1.5rem;
 }

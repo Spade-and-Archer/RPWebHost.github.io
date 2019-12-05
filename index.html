@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Elements</title>
@@ -41,11 +42,13 @@
   </div>
   <div  class="mdc-toolbar">
     <nav id="navigation-tabs" class="develop-tab-bar">
-      <a href="/design" class="develop-tab">
+      <a href="#features" id="features" class="develop-tab" onclick="LoadFeatures()">
         Features
+        <span hidden="hidden" class="develop-tab__nav-indicator"></span>
       </a>
-      <a href="/components" class="develop-tab">
+      <a href="#about" id="about" class="develop-tab" onclick="LoadAbout()">
         About us
+        <span hidden="hidden" class="develop-tab__nav-indicator"></span>
       </a>
     </nav>
     <div >
@@ -53,14 +56,18 @@
       <p id="LongTitleBarLogo"  style="font-family: Georgia,serif; font-size: 4rem; margin-top: -0rem;">Rusty<span style="font-family:Calibri; font-weight: bold"> Palette</span></p>
     </div>
     <nav id="navigation-tabs2" class="develop-tab-bar">
-      <a href="/develop" class="develop-tab develop-tab--active">
+      <a href="#faq" class="develop-tab develop-tab--active">
         FAQ
-        <span class="develop-tab__nav-indicator"></span>
+        <span hidden="hidden" class="develop-tab__nav-indicator"></span>
       </a>
-      <a href="/resources" id="download-tab" class="develop-tab">
+      <a href="#purchase" id="download-tab" class="develop-tab">
         Install Today!
+        <span hidden="hidden" class="develop-tab__nav-indicator"></span>
       </a>
     </nav>
+  </div>
+  <div id="PageBody">
+
   </div>
   <div class="mdc-text-field" style="display: block; align-content: center; height: fit-content">
     <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
