@@ -1,13 +1,14 @@
 #UpperFeatureIndex{
   height: 300px;
   width: 100%;
+
   display: flex;
 
 }
 #FrontPageLogo{
   width: 500px;
   margin: auto;
-
+  max-width: 70%;
 }
 #download-tab{
   background-color: #7cb342;
