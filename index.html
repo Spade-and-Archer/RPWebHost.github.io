@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Elements</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <style>
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .element-card {
+      width: 20em;
+      margin: 16px;
+    }
+
+    .element-card > .mdc-card__media {
+      height: 9em;
+    }
+
+    #demo-absolute-fab {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 1;
+    }
+  </style>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/Index.css">
+</head>
+<body class="mdc-typography", style="margin:0px; padding:0px">
+  <div class = "UpperFeature" id="UpperFeatureIndex">
+  <img src="css/img/logo%20for%20banner.png" alt="None" id="FrontPageLogo">
+
+
+  </div>
+  <div class="mdc-toolbar">
+    <nav id="navigation-tabs" class="develop-tab-bar">
+      <a href="/design" class="develop-tab">
+        Features
+      </a>
+      <a href="/components" class="develop-tab">
+        About us
+      </a>
+    </nav>
+    <div>
+      <p style="font-family: Georgia,serif; font-size: 4rem; margin-top: -0rem;">Rusty<span style="font-family:Calibri; font-weight: bold"> Palette</span></p>
+
+    </div>
+    <nav id="navigation-tabs2" class="develop-tab-bar">
+      <a href="/develop" class="develop-tab develop-tab--active">
+        FAQ
+        <span class="develop-tab__nav-indicator"></span>
+      </a>
+      <a href="/resources" id="download-tab" class="develop-tab">
+        Install Today!
+      </a>
+    </nav>
+  </div>
+  <div class="mdc-text-field" style="display: block; align-content: center; height: fit-content">
+    <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
+      This site is currently under construction.
+    </p>
+    <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
+      Rusty Palette is an overlay for Rust intended to offer a variety of Quality of Life improvements as well as tactical
+      advantages while steering clear of anything that could be called 'hacking.' The first feature that will exist is
+      a painting feature which will blow Rustangelo out of the water in terms of both speed and quality. Using some fairly
+      specialized algorithms and a hidden colour palette accessible via pixel-perfect color selection, I can create paintings with
+      more detail in under 5 minutes.
+    </p>
+    <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
+      Upcoming features include death tracker, alerts for players of interest coming online or going offline,
+      a valuable loot highlighter to help with raids, the ability to make markings on your map, and guitar macros.
+    </p>
+    <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
+      Beta release will hopefully be in Mid-december, and full release in early January. Cost of the app will be 5 dollars.
+    </p>
+
+  </div>
+<button class="mdc-fab" id="demo-absolute-fab" aria-label="Favorite">
+  <span class="mdc-fab__icon material-icons">favorite</span>
+</button>
+</body>
+</html>

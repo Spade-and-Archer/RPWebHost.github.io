@@ -1,0 +1,21 @@
+#UpperFeatureIndex{
+  height: 300px;
+  width: 100%;
+  display: flex;
+
+}
+#FrontPageLogo{
+  width: 500px;
+  margin: auto;
+
+}
+#download-tab{
+  background-color: #7cb342;
+  color : var(--mdc-theme-text-primary-on-dark);
+  padding-left : .7rem;
+  padding-right : .7rem;
+  margin : 0px;
+}
+#download-tab:hover{
+  background-color: #4b830d;
+}
