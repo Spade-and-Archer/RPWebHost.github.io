@@ -13,6 +13,7 @@ function OnBodyLoad(){
       document.getElementById("mobile-nav-bar").classList.remove("invisible");
     }
   }
+  LoadFeatures();
 }
 
 window.onscroll = function() {scrollFunction()};
@@ -40,8 +41,11 @@ function ClearActiveTabs() {
   for(var i = 0; i < TabElements.length; i++){
 
     TabElements[i].classList.remove("develop-tab--active");
-    if(TabElements[i].children.length > 0)
-      TabElements[i].children[0].hidden = true;
+    if(TabElements[i].children.length > 0){
+      if(TabElements[i].children[0].className == "develop-tab__nav-indicator")
+        TabElements[i].children[0].hidden = true;
+    }
+
   }
 }
 
@@ -81,7 +85,7 @@ const features = [
 function LoadEachFeature() {
   let fHolder = document.createElement("div");
   fHolder.id = "fholder";
-  document.getElementById("PageBody").appendChild(fHolder);
+  document.getElementById("FeaturesBody").appendChild(fHolder);
   for (let i = 0; i < features.length; i++) {
     let newElement = document.createElement("div");
     newElement.id = "featurebox-" + i.toString();
@@ -127,5 +131,5 @@ function LoadAbout(){
   ClearActiveTabs();
   document.getElementById("about").classList.add("develop-tab--active");
   document.getElementById("about").children[0].hidden = false;
-  document.getElementById("PageBody")
+  document.getElementById("PageBody");
 }

@@ -46,6 +46,18 @@
 #PageBody{
   width:100%;
 }
+
+h1{
+  font-size: 4rem;
+  text-align: center;
+
+}
+a.anchor {
+  display: block;
+  position: relative;
+  top: -110px;
+  visibility: hidden;
+}
 .fixed-nav-bar{
   position:fixed;
   top:0px;
