@@ -1,9 +1,18 @@
 #UpperFeatureIndex{
   height: 300px;
   width: 100%;
+  text-align: right;
+  display: block;
 
-  display: flex;
+}
+#imageCreditLink{
+  color: var(--mdc-theme-text-hint-on-dark);
+  font-size: 1rem;
+  height: 20px;
 
+}
+#imageCreditLink:visited{
+  color: var(--mdc-theme-text-hint-on-dark);
 }
 #fholder{
   display: inline-block;
@@ -15,8 +24,16 @@
   width: 500px;
   margin: auto;
   max-width: 70%;
+  display: block;
 }
 #download-tab{
+  background-color: #7cb342;
+  color : var(--mdc-theme-text-primary-on-dark);
+  padding-left : .7rem;
+  padding-right : .7rem;
+  margin : 0px;
+}
+#mini-download-tab{
   background-color: #7cb342;
   color : var(--mdc-theme-text-primary-on-dark);
   padding-left : .7rem;

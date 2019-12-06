@@ -5,6 +5,9 @@ function OnBodyLoad(){
     if(screen.availWidth < 600){
       document.getElementById("LongTitleBarLogo").hidden = true;
       document.getElementById("ShortTitleBarLogo").hidden = false;
+      document.getElementById("navigation-tabs").classList.add("invisible");
+      document.getElementById("navigation-tabs-2").classList.add("invisible");
+      document.getElementById("mobile-toolbar").classList.remove("invisible");
     }
   }
 }
@@ -64,28 +67,6 @@ function LoadEachFeature() {
     //$("#PageBody").add(newElement);
     $("#featurebox-" + i.toString()).load("html/FeatureCard.html");
 
-    // $("#fc-blank-title").innerText = features[i].FeatureTitle;
-    // $("#fc-blank-title").id = "#fc-title-" + i.toString();
-    //
-    // //$("#fc-blank-icon").innerText = features[i].FeatureStatus;
-    // //$("#fc-blank-icon").id = "#fc-icon-" + i.toString();
-    //
-    // $("#fc-blank-description").innerText = features[i].FeatureDescription;
-    // $("#fc-blank-description").id = "#fc-description-" + i.toString();
-    //
-    // $("#fc-blank-image").style = "url(" + features[i].FeatureImg + ")";
-    // $("#fc-blank-image").id = "#fc-image-" + i.toString();
-    //
-    // $("#status-" + features[i].FeatureStatus).addClass("feature-active-icon");
-    // $("#status-" + features[i].FeatureStatus).id = "#status-" + features[i].FeatureStatus + i.toString();
-    //
-    // $("#status-done").addClass("feature-active-icon");
-    // $("#status-alarm").remove();
-    // $("#status-later").remove();
-    //$(selector).removeClass("feature-hidden-icon");
-    //console.log(selector);
-
-
   }
 }
 
@@ -122,4 +103,5 @@ function LoadAbout(){
   ClearActiveTabs();
   document.getElementById("about").classList.add("develop-tab--active");
   document.getElementById("about").children[0].hidden = false;
+  document.getElementById("PageBody")
 }

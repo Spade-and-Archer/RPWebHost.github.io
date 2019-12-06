@@ -2,11 +2,11 @@
 <html>
 <head>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Elements</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"/>
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <style>
     .cards {
@@ -34,61 +34,85 @@
   <link rel="stylesheet" href="css/Index.css">
   <script src="js/main.js"></script>
 </head>
-<body class="mdc-typography", style="margin:0px; padding:0px;" onload="OnBodyLoad()">
-  <div class = "UpperFeature" id="UpperFeatureIndex">
+<body class="mdc-typography" , style="margin:0px; padding:0px;" onload="OnBodyLoad()">
+<div class="UpperFeature" id="UpperFeatureIndex">
+
+  <a id="imageCreditLink" href="https://www.reddit.com/r/playrust/comments/a4oqp0/a_piece_of_rust_art_i_created/"
+     target="_blank">Image credit to u/xSalad_</a>
   <img src="css/img/logo%20for%20banner.png" alt="None" id="FrontPageLogo">
-
-
+</div>
+<div class="mdc-toolbar">
+  <nav id="navigation-tabs" class="develop-tab-bar">
+    <a href="#features" id="features" class="develop-tab" onclick="LoadFeatures()">
+      Features
+      <span hidden="hidden" class="develop-tab__nav-indicator"></span>
+    </a>
+    <a href="#about" id="about" class="develop-tab" onclick="LoadAbout()">
+      About us
+      <span hidden="hidden" class="develop-tab__nav-indicator"></span>
+    </a>
+  </nav>
+  <div style="width: 100%; display: contents; text-align: center; ">
+    <p id="ShortTitleBarLogo" hidden="hidden" style="font-family: Georgia,serif; font-size: 4rem; margin-top: -0rem; position: absolute; width: 100%;">
+      R<span style="font-family:Calibri; font-weight: bold; font-size:4.3rem">P</span></p>
+    <p id="LongTitleBarLogo" style="font-family: Georgia,serif; font-size: 4rem; margin-top: -0rem; position: absolute; width: 100%;">
+      Rusty<span style="font-family:Calibri; font-weight: bold"> Palette</span></p>
   </div>
-  <div  class="mdc-toolbar">
-    <nav id="navigation-tabs" class="develop-tab-bar">
-      <a href="#features" id="features" class="develop-tab" onclick="LoadFeatures()">
-        Features
-        <span hidden="hidden" class="develop-tab__nav-indicator"></span>
-      </a>
-      <a href="#about" id="about" class="develop-tab" onclick="LoadAbout()">
-        About us
-        <span hidden="hidden" class="develop-tab__nav-indicator"></span>
-      </a>
-    </nav>
-    <div >
-      <p id="ShortTitleBarLogo" hidden="hidden" style="font-family: Georgia,serif; font-size: 4rem; margin-top: -0rem;">R<span style="font-family:Calibri; font-weight: bold; font-size:4.3rem">P</span></p>
-      <p id="LongTitleBarLogo"  style="font-family: Georgia,serif; font-size: 4rem; margin-top: -0rem;">Rusty<span style="font-family:Calibri; font-weight: bold"> Palette</span></p>
-    </div>
-    <nav id="navigation-tabs2" class="develop-tab-bar">
-      <a href="#faq" class="develop-tab develop-tab--active">
-        FAQ
-        <span hidden="hidden" class="develop-tab__nav-indicator"></span>
-      </a>
-      <a href="#purchase" id="download-tab" class="develop-tab">
-        Install Today!
-        <span hidden="hidden" class="develop-tab__nav-indicator"></span>
-      </a>
-    </nav>
-  </div>
-  <div id="PageBody">
+  <nav id="navigation-tabs-2" class="develop-tab-bar">
+    <a href="https://discord.gg/zCmszcM" class="develop-tab develop-tab--active" target="_blank">
+      <img src="css/img/Discord-Logo-White.png" style="height:75%">
+    </a>
+    <a href="#faq" class="develop-tab develop-tab--active">
+      FAQ
+      <span hidden="hidden" class="develop-tab__nav-indicator"></span>
+    </a>
+    <a href="#purchase" id="download-tab" class="develop-tab">
+      Install Today!
+      <span hidden="hidden" class="develop-tab__nav-indicator"></span>
+    </a>
+  </nav>
+</div>
 
-  </div>
-  <div class="mdc-text-field" style="display: block; align-content: center; height: fit-content">
-    <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
-      This site is currently under construction.
-    </p>
-    <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
-      Rusty Palette is an overlay for Rust intended to offer a variety of Quality of Life improvements as well as tactical
-      advantages while steering clear of anything that could be called 'hacking.' The first feature that will exist is
-      a painting feature which will blow Rustangelo out of the water in terms of both speed and quality. Using some fairly
-      specialized algorithms and a hidden colour palette accessible via pixel-perfect color selection, I can create paintings with
-      more detail in under 5 minutes.
-    </p>
-    <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
-      Upcoming features include death tracker, alerts for players of interest coming online or going offline,
-      a valuable loot highlighter to help with raids, the ability to make markings on your map, and guitar macros.
-    </p>
-    <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
-      Beta release will hopefully be in Mid-december, and full release in early January. Cost of the app will be 5 dollars.
-    </p>
+<div class="invisible mdc-toolbar" id="mobile-toolbar">
+  <nav id="mini-tabs" class="develop-tab-bar" style="justify-content: space-between;">
+    <a href="https://discord.gg/zCmszcM" class="develop-tab develop-tab--active" target="_blank">
+      <img src="css/img/Discord-Logo-White.png" style="height:75%">
+    </a>
+    <a href="#faq" class="develop-tab develop-tab--active">
+      FAQ
+      <span hidden="hidden" class="develop-tab__nav-indicator"></span>
+    </a>
+    <a href="#purchase" id="mini-download-tab" class="develop-tab">
+      Install Today!
+      <span hidden="hidden" class="develop-tab__nav-indicator"></span>
+    </a>
+  </nav>
+</div>
+<div id="PageBody">
 
-  </div>
+</div>
+<div class="mdc-text-field" style="display: block; align-content: center; height: fit-content">
+  <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
+    This site is currently under construction.
+  </p>
+  <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
+    Rusty Palette is an overlay for Rust intended to offer a variety of Quality of Life improvements as well as tactical
+    advantages while steering clear of anything that could be called 'hacking.' The first feature that will exist is
+    a painting feature which will blow Rustangelo out of the water in terms of both speed and quality. Using some fairly
+    specialized algorithms and a hidden colour palette accessible via pixel-perfect color selection, I can create
+    paintings with
+    more detail in under 5 minutes.
+  </p>
+  <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
+    Upcoming features include death tracker, alerts for players of interest coming online or going offline,
+    a valuable loot highlighter to help with raids, the ability to make markings on your map, and guitar macros.
+  </p>
+  <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
+    Beta release will hopefully be in Mid-december, and full release in early January. Cost of the app will be 5
+    dollars.
+  </p>
+
+</div>
 <button class="mdc-fab" id="demo-absolute-fab" aria-label="Favorite">
   <span class="mdc-fab__icon material-icons">favorite</span>
 </button>

@@ -234,6 +234,7 @@ textarea {
 
 .invisible {
   visibility: hidden;
+  display: none;
 }
 
 /*
