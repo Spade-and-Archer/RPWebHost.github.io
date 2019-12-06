@@ -60,6 +60,10 @@
 #Announcement-media{
   background-image: url("img/AnnouncementPic.png");
 }
+#main-body{
+  background-color: #0e0e0e;
+  background-image: url("img/tileback.png");
+}
 .feature-art{
   background-image:url("img/LayerOfDetail 1.jpg");
   width: 400px;
