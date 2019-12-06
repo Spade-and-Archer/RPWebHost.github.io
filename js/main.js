@@ -1,16 +1,40 @@
+let NavBarElement;
 function OnBodyLoad(){
   ShrinkTitleBarOnLoad();
   function ShrinkTitleBarOnLoad(){
+    NavBarElement = document.getElementById("desktop-nav-bar");
     console.log(screen.availWidth);
     if(screen.availWidth < 600){
+      NavBarElement = document.getElementById("mobile-nav-bar");
       document.getElementById("LongTitleBarLogo").hidden = true;
       document.getElementById("ShortTitleBarLogo").hidden = false;
       document.getElementById("navigation-tabs").classList.add("invisible");
       document.getElementById("navigation-tabs-2").classList.add("invisible");
-      document.getElementById("mobile-toolbar").classList.remove("invisible");
+      document.getElementById("mobile-nav-bar").classList.remove("invisible");
     }
   }
 }
+
+window.onscroll = function() {scrollFunction()};
+let FixedScrollbar = false;
+function scrollFunction() {
+  if(NavBarElement.getBoundingClientRect().top <= 0 && !FixedScrollbar){
+    FixedScrollbar = true;
+    document.getElementById("PageBody").style.paddingTop = NavBarElement.getBoundingClientRect().height + "px";
+    NavBarElement.classList.add("fixed-nav-bar");
+    let amountToScroll = -1 * NavBarElement.getBoundingClientRect().height - document.getElementById("UpperFeatureIndex").getBoundingClientRect().height;
+    document.getElementById("UpperFeatureIndex").remove();
+    scrollBy(amountToScroll, 0);
+
+
+  }
+  // if (document.body.scrollTop > NavBarElement. || document.documentElement.scrollTop > 20) {
+  //   document.getElementById("navbar").style.top = "0";
+  // } else {
+  //   document.getElementById("navbar").style.top = "-50px";
+  // }
+}
+
 function ClearActiveTabs() {
   let TabElements = document.getElementsByClassName("develop-tab");
   for(var i = 0; i < TabElements.length; i++){

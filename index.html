@@ -41,7 +41,7 @@
      target="_blank">Image credit to u/xSalad_</a>
   <img src="css/img/logo%20for%20banner.png" alt="None" id="FrontPageLogo">
 </div>
-<div class="mdc-toolbar">
+<div class="mdc-toolbar" id="desktop-nav-bar">
   <nav id="navigation-tabs" class="develop-tab-bar">
     <a href="#features" id="features" class="develop-tab" onclick="LoadFeatures()">
       Features
@@ -73,7 +73,7 @@
   </nav>
 </div>
 
-<div class="invisible mdc-toolbar" id="mobile-toolbar">
+<div class="invisible mdc-toolbar" id="mobile-nav-bar">
   <nav id="mini-tabs" class="develop-tab-bar" style="justify-content: space-between;">
     <a href="https://discord.gg/zCmszcM" class="develop-tab develop-tab--active" target="_blank">
       <img src="css/img/Discord-Logo-White.png" style="height:75%">
@@ -88,33 +88,47 @@
     </a>
   </nav>
 </div>
-<div id="PageBody">
+<div id="PageBody" style="padding-top:0;">
 
 </div>
-<div class="mdc-text-field" style="display: block; align-content: center; height: fit-content">
-  <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
-    This site is currently under construction.
-  </p>
-  <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
-    Rusty Palette is an overlay for Rust intended to offer a variety of Quality of Life improvements as well as tactical
-    advantages while steering clear of anything that could be called 'hacking.' The first feature that will exist is
-    a painting feature which will blow Rustangelo out of the water in terms of both speed and quality. Using some fairly
-    specialized algorithms and a hidden colour palette accessible via pixel-perfect color selection, I can create
-    paintings with
-    more detail in under 5 minutes.
-  </p>
-  <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
-    Upcoming features include death tracker, alerts for players of interest coming online or going offline,
-    a valuable loot highlighter to help with raids, the ability to make markings on your map, and guitar macros.
-  </p>
-  <p class="mdc-text-field" style="width: 100%; padding: 0px 20% 0 20%; height: fit-content">
-    Beta release will hopefully be in Mid-december, and full release in early January. Cost of the app will be 5
-    dollars.
-  </p>
+<div style="width:100%; height:fit-content; display: block">
+  <div class="homepage-mdc-card mdc-card" hidden="hidden">
+    <div class="mdc-card__primary-action">
 
+      <div class="mdc-card__media mdc-card__media--16-9" id="Announcement-media" >
+
+
+        </div>
+      </div>
+      <div style="padding:10px">
+        <p style="text-align: center; font-style: italic; width:100%"> <span class="mdc-text-field--focused"  >
+        Notice: This site is currently under construction.
+      </span></p>
+        <p> <span class="mdc-text-field--focused">
+        An overlay for Rust to give you a tactical advantage and improve Quality of Life without hacks!
+      </span></p>
+        <p> <span class="mdc-text-field--focused">
+        Status: Currently in development with one feature completed and more to come, scheduled for a mid-december Alpha launch and a wider Beta in early January.
+      </span></p>
+        <p> <span class="mdc-text-field--focused">
+        Upcoming features include death tracker, alerts for players of interest coming online or going offline,
+        a valuable loot highlighter to help with raids, the ability to make markings on your map, and guitar macros.
+      </span></p>
+
+        <p> <span class="mdc-text-field--focused" >
+        We will be releasing several hundred licenses over prominent community platforms in early january. Contact me on our discord server if you are interested
+        in distributing licenses or if you would just like a personal key for yourself.
+      </span></p>
+        <p> <span class="mdc-text-field--focused" >
+        During the beta in January a license will be $2.00 USD, which will increase to $5.00 at the end of the beta and further increase as additional features are added.
+        Your license will never expire and you will always have access to the latest version of the software.
+      </span></p>
+
+      </div>
+    </div>
+  </div>
 </div>
-<button class="mdc-fab" id="demo-absolute-fab" aria-label="Favorite">
-  <span class="mdc-fab__icon material-icons">favorite</span>
+
 </button>
 </body>
 </html>

@@ -46,7 +46,20 @@
 #PageBody{
   width:100%;
 }
-
+.fixed-nav-bar{
+  position:fixed;
+  top:0px;
+  z-index: 1000;
+}
+.release-text{
+  width: 100%; padding: 0px 20% 0 20%; height: fit-content;
+}
+.develop-tab-bar{
+  z-index: 250;
+}
+#Announcement-media{
+  background-image: url("img/AnnouncementPic.png");
+}
 .feature-art{
   background-image:url("img/LayerOfDetail 1.jpg");
   width: 400px;
@@ -83,4 +96,9 @@
   display:inline-flex;
   text-align: center;
 }
-.
+.homepage-mdc-card{
+  max-width: 700px;
+  width:75%;
+  min-width: 300px;
+  margin: 20px auto 20px auto;
+}
