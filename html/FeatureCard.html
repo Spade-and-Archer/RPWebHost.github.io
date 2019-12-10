@@ -79,16 +79,19 @@
     //$("#PageBody").add(newElement)
 
     $("#featurebox-" + i + " #fc-blank-title").text(features[i].FeatureTitle);
-    $("#featurebox-" + i + " #fc-blank-title").id = "#fc-title-" + i.toString();
+    $("#featurebox-" + i + " #fc-blank-title").attr("id", "fc-title-" + i.toString());
 
     $("#featurebox-" + i + " #fc-blank-description").text(features[i].FeatureDescription);
-    $("#featurebox-" + i + " #fc-blank-description").id = "#fc-description-" + i.toString();
+    $("#featurebox-" + i + " #fc-blank-description").attr("id", "fc-description-" + i.toString());
+
+
 
     $("#featurebox-" + i + " #fc-blank-image").style = "url(" + features[i].FeatureImg + ")";
-    $("#featurebox-" + i + " #fc-blank-image").id = "#fc-image-" + i.toString();
+    $("#featurebox-" + i + " #fc-blank-image").attr("id","fc-image-" + i.toString());
+
 
     $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).addClass("feature-active-icon");
-    $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).id = "#status-" + features[i].FeatureStatus + i.toString();
+    $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).attr("id", "status-" + features[i].FeatureStatus + i.toString());
 
 
   }
