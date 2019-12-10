@@ -19,16 +19,22 @@ function OnBodyLoad(){
 window.onscroll = function() {scrollFunction()};
 let FixedScrollbar = false;
 function scrollFunction() {
-  if(NavBarElement.getBoundingClientRect().top <= 0 && !FixedScrollbar){
-    FixedScrollbar = true;
-    document.getElementById("PageBody").style.paddingTop = NavBarElement.getBoundingClientRect().height + "px";
-    NavBarElement.classList.add("fixed-nav-bar");
-    let amountToScroll = -1 * NavBarElement.getBoundingClientRect().height - document.getElementById("UpperFeatureIndex").getBoundingClientRect().height;
-    document.getElementById("UpperFeatureIndex").remove();
-    scrollBy(amountToScroll, 0);
+  try{
+    if(NavBarElement.getBoundingClientRect().top <= 0 && !FixedScrollbar){
+      FixedScrollbar = true;
+      document.getElementById("PageBody").style.paddingTop = NavBarElement.getBoundingClientRect().height + "px";
+      NavBarElement.classList.add("fixed-nav-bar");
+      let amountToScroll = -1 * NavBarElement.getBoundingClientRect().height - document.getElementById("UpperFeatureIndex").getBoundingClientRect().height;
+      document.getElementById("UpperFeatureIndex").remove();
+      scrollBy(amountToScroll, 0);
 
+
+    }
+  }
+  catch{
 
   }
+
   // if (document.body.scrollTop > NavBarElement. || document.documentElement.scrollTop > 20) {
   //   document.getElementById("navbar").style.top = "0";
   // } else {
