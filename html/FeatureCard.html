@@ -93,6 +93,10 @@
     $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).addClass("feature-active-icon");
     $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).attr("id", "status-" + features[i].FeatureStatus + i.toString());
 
+    $("#featurebox-" + i + " #status-later").removeAttr("id");
+    $("#featurebox-" + i + " #status-soon").removeAttr("id");
+    $("#featurebox-" + i + " #status-done").removeAttr("id");
+
 
   }
 
