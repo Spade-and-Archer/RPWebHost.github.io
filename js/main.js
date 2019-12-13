@@ -1,12 +1,14 @@
 let NavBarElement;
+let mobile = false;
 function OnBodyLoad(){
   ShrinkTitleBarOnLoad();
   function ShrinkTitleBarOnLoad(){
     NavBarElement = document.getElementById("desktop-nav-bar");
     console.log(screen.availWidth);
     if(screen.availWidth < 600){
+      mobile = true;
       NavBarElement = document.getElementById("mobile-nav-bar");
-      document.getElementById("LongTitleBarLogo").hidden = true;
+      document.getElementById("LongTitleBarLogo").classList.add("invisible");
       document.getElementById("ShortTitleBarLogo").hidden = false;
       document.getElementById("navigation-tabs").classList.add("invisible");
       document.getElementById("navigation-tabs-2").classList.add("invisible");
@@ -22,13 +24,20 @@ function scrollFunction() {
   try{
     if(NavBarElement.getBoundingClientRect().top <= 0 && !FixedScrollbar){
       FixedScrollbar = true;
-      document.getElementById("PageBody").style.paddingTop = NavBarElement.getBoundingClientRect().height + "px";
+      if(!mobile)
+        document.getElementById("PageBody").style.paddingTop = NavBarElement.getBoundingClientRect().height + "px";
       NavBarElement.classList.add("fixed-nav-bar");
+
       let amountToScroll = -1 * NavBarElement.getBoundingClientRect().height - document.getElementById("UpperFeatureIndex").getBoundingClientRect().height;
+      if(mobile){
+        amountToScroll =-1 * document.getElementById("UpperFeatureIndex").getBoundingClientRect().height + NavBarElement.getBoundingClientRect().height;
+      }
+      console.log(amountToScroll);
+        //amountToScroll += document.getElementById("desktop-nav-bar").getBoundingClientRect().height;
+
       document.getElementById("UpperFeatureIndex").remove();
-      scrollBy(amountToScroll, 0);
 
-
+      scrollBy(0, amountToScroll);
     }
   }
   catch{
@@ -92,46 +101,96 @@ function LoadEachFeature() {
   let fHolder = document.createElement("div");
   fHolder.id = "fholder";
   document.getElementById("FeaturesBody").appendChild(fHolder);
-  for (let i = 0; i < features.length; i++) {
+  $("#FeaturesBody").load("html/FeatureCard.html");
+  for (let i = 0; i < 0; i++) {
     let newElement = document.createElement("div");
     newElement.id = "featurebox-" + i.toString();
     newElement.className = "featurebox";
     fHolder.appendChild(newElement);
     //newElement.addEventListener("load", function(){console.log("yay")});
     //$("#PageBody").add(newElement);
-    $("#featurebox-" + i.toString()).load("html/FeatureCard.html");
+    $("#featurebox-" + i.toString());
 
   }
 }
 
-function LoadFeatures(){
+function LoadFeatures() {
   ClearActiveTabs();
   document.getElementById("features").classList.add("develop-tab--active");
   document.getElementById("features").children[0].hidden = false;
   //$("#PageBody").load("html/Features.html");
 
   LoadEachFeature();
+}
+var XMLObj;
+function XMLLoading(){
+  let xmlhttp = new XMLHttpRequest();
 
+  xmlhttp.open("GET", "Features/Features.xml" , true);
+  xmlhttp.send();
 
-  // for(let i = 0; i < features.length; i ++){
-  //   let newElement = document.createElement("div")
-  //   newElement.id = "featurebox" + i.toString();
-  //   $("#PageBody").add(newElement);
-  //   $("#featurebox" + i.toString()).load("html/FeatureCard.html");
-  //   $("#fc-blank-title").innerText = features[i].FeatureTitle;
-  //   $("#fc-blank-title").id = "#fc-title-" + i.toString();
-  //
-  //   $("#fc-blank-icon").innerText = features[i].FeatureStatus;
-  //   $("#fc-blank-icon").id = "#fc-icon-" + i.toString();
-  //
-  //   $("#fc-blank-description").innerText = features[i].FeatureDescription;
-  //   $("#fc-blank-description").id = "#fc-description-" + i.toString();
-  //
-  //   $("#fc-blank-image").style = "url(" + features[i].FeatureImg + ")";
-  //   $("#fc-blank-image").id = "#fc-image-" + i.toString();
-  //
-  //   document.getElementById("PageBody").appendChild(newElement);
-  //}
+  XMLObj = xmlhttp.responseXML;
+
+}
+function loadXMLDoc() {
+
+}
+
+Object.fromXML = function( source, includeRoot ) {
+  if( typeof source == 'string' )
+  {
+    try
+    {
+      if ( window.DOMParser )
+        source = ( new DOMParser() ).parseFromString( source, "application/xml" );
+      else if( window.ActiveXObject )
+      {
+        var xmlObject = new ActiveXObject( "Microsoft.XMLDOM" );
+        xmlObject.async = false;
+        xmlObject.loadXML( source );
+        source = xmlObject;
+        xmlObject = undefined;
+      }
+      else
+        throw new Error( "Cannot find an XML parser!" );
+    }
+    catch( error )
+    {
+      return false;
+    }
+  }
+
+  var result = {};
+
+  if( source.nodeType == 9 )
+    source = source.firstChild;
+  if( !includeRoot )
+    source = source.firstChild;
+
+  while( source ) {
+    if( source.childNodes.length ) {
+      if( source.tagName in result ) {
+        if( result[source.tagName].constructor != Array )
+          result[source.tagName] = [result[source.tagName]];
+        result[source.tagName].push( Object.fromXML( source ) );
+      }
+      else
+        result[source.tagName] = Object.fromXML( source );
+    } else if( source.tagName )
+      result[source.tagName] = source.nodeValue;
+    else if( !source.nextSibling ) {
+      if( source.nodeValue.clean() != "" ) {
+        result = source.nodeValue.clean();
+      }
+    }
+    source = source.nextSibling;
+  }
+  return result;
+};
+
+String.prototype.clean = function() {
+  var self = this;
+  return this.replace(/(\r\n|\n|\r)/gm, "").replace(/^\s+|\s+$/g, "");
 }
 function LoadAbout(){
   ClearActiveTabs();

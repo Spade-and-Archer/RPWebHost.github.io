@@ -1,3 +1,6 @@
 # Include your project-specific ignores in this file
 # Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 # Useful .gitignore templates: https://github.com/github/gitignore
+/Features/img/Full-map-image.webp
+/Features/img/RPRustangeloComparison.xcf
+/Features/img/Full-map-image.xcf

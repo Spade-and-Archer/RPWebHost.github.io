@@ -1,104 +1,275 @@
+<link rel="stylesheet" href="css/FeatureHolder.css">
+<div id="FeatureListMaster">
 
-<div class="feature-card mdc-card" hidden="hidden">
-  <div class="mdc-card__primary-action">
-    <div style="padding:10px">
-      <p> <span class="mdc-theme--text-primary-on-light feature-card-header" id="fc-blank-title">Painting!</span></p>
-    </div>
-    <div class="feature-art mdc-card__media mdc-card__media--16-9" id="fc-blank-image">
-      <div class="feature-icon-container mdc-card__media-content">
-        <button class="feature-done-button mdc-fab feature-hidden-icon" id="status-done" aria-label="done">
-          <span class="mdc-fab__icon material-icons">done</span></button>
-        <button  class="feature-soon-button mdc-fab feature-hidden-icon" id="status-soon" aria-label="soon">
-          <span class="mdc-fab__icon material-icons">query_builder</span></button>
-        <button class="feature-later-button mdc-fab feature-hidden-icon" id="status-later" aria-label="later">
-          <span class="mdc-fab__icon material-icons" >looks</span></button>
+</div>
+<div class="feature-details-container" id="FeatureContainerTemplate" hidden>
+  <div class="point-scroll">
+    <i class="material-icons next-tile-button">
+      keyboard_arrow_right
+    </i>
+  </div>
+  <div class="feature-title-container">
+<!--    <div class="">&lt;!&ndash;&ndash;&gt;-->
+      <div class="mdc-theme--text-primary-on-dark feature-title">Painting!</div>
+      <div class="mdc-text-field--focused feature-description">
+
       </div>
-    </div>
-    <div style="padding:10px">
-      <p> <span class="mdc-text-field--focused" id="fc-blank-description">
-        Description
-      </span></p>
-    </div>
+<!--    </div>-->
+  </div>
+  <div class="feature-points-list">
 
   </div>
-  <div class="mdc-card__actions">
-    <div class="mdc-card__action-buttons">
-      <button class="mdc-button mdc-card__action mdc-card__action--button">
-        <span class="mdc-button__label">Action 1</span>
-      </button>
-      <button class="mdc-button mdc-card__action mdc-card__action--button">
-        <span class="mdc-button__label">Action 2</span>
-      </button>
+</div>
+<div class="mobile feature-details-container" id="FeatureContainerTemplateMobile">
+  <div class="feature-title-container">
+    <div class="mdc-theme--text-primary-on-dark feature-title">Painting!</div>
+    <div class="mdc-text-field--focused feature-description">
     </div>
-    <div class="mdc-card__action-icons">
-      <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="Share">share</button>
-      <button class="material-icons mdc-icon-button mdc-card__action mdc-card__action--icon" title="More options">more_vert</button>
+    <!--    </div>-->
+  </div>
+  <div class="feature-points-list">
+    <div class="point-scroll left">
+      <i class="material-icons next-tile-button">
+        keyboard_arrow_left
+      </i>
+    </div>
+    <div class="point-scroll right">
+      <i class="material-icons next-tile-button">
+        keyboard_arrow_right
+      </i>
     </div>
   </div>
 </div>
+
+<div class="feature-card mdc-card" id="FeatureCardTemplate" hidden="hidden">
+  <div class="feature-art mdc-card__media mdc-card__media--16-9">
+    <div class="feature-icon-container mdc-card__media-content">
+    </div>
+  </div>
+  <div class="mdc-card-wrapper__text-section"><!---->
+    <div class="mdc-theme--text-primary-on-light point-header">Painting!</div>
+<!--    <p> <span class="mdc-text-field&#45;&#45;focused feature-card-description">-->
+<!--        Description-->
+<!--      </span></p>-->
+<!--    &lt;!&ndash;&ndash;&gt;</div>-->
+<!--  <div class="mdc-card-wrapper__text-section"><div class="demo-card__supporting-text">-->
+<!--    <div style="padding:10px">-->
+
+<!--    </div>-->
+<!--    <div style="padding:10px">-->
+
+<!--    </div>-->
+  </div>
+</div>
+
+
+  <!--<div class="feature-icon-container mdc-card__media-content" hidden="hidden">-->
+  <!--  <button class="feature-done-button mdc-fab feature-hidden-icon" id="status-done" aria-label="done">-->
+  <!--    <span class="mdc-fab__icon material-icons">done</span></button>-->
+  <!--  <button  class="feature-soon-button mdc-fab feature-hidden-icon" id="status-soon" aria-label="soon">-->
+  <!--    <span class="mdc-fab__icon material-icons">query_builder</span></button>-->
+  <!--  <button class="feature-later-button mdc-fab feature-hidden-icon" id="status-later" aria-label="later">-->
+  <!--    <span class="mdc-fab__icon material-icons" >looks</span></button>-->
+  <!--</div>-->
 <script type="text/javascript">
-  const features = [
-    {FeatureTitle : "Painting!",
-      FeatureImg : "img/LayerOfDetail 1.jpg",
-      FeatureDescription : "Allows you to create paintings from image files in under 5 minutes",
-      FeatureStatus : "done"},
+  var xmlhttp;
+  const WidthOfTitleBit = 360;
+  function XMLLoading(){
+    xmlhttp = new XMLHttpRequest();
 
-    {FeatureTitle : "Custom Map Markers",
-      FeatureImg : "img/LayerOfDetail 1.jpg",
-      FeatureDescription : "Records the position of your screenshots and allows you to add notes to your map that will be overlayed on your regular map whenever you hit G",
-      FeatureStatus : "soon"},
+    xmlhttp.open("GET", "./Features/Features.xml" , false);
+    xmlhttp.send();
+    console.log(xmlhttp.responseXML);
+    return xmlhttp.responseXML;
+  }
+  function GenerateFeaturesFromXml(){
+    if(screen.availWidth < 600){
 
-    {FeatureTitle : "Loot Highlighting",
-      FeatureImg : "img/LayerOfDetail 1.jpg",
-      FeatureDescription : "Will highlight red any loot in your inventory that is lower value than the loot chest you are looking at and highlight green any high-value loot you should prioritize",
-      FeatureStatus : "soon"},
+    }
+    let XMLfeatures = xml.getElementsByTagName("Feature");
+    for(let i=0; i < XMLfeatures.length; i++){
+      let NewFeatureNode = document.getElementById("FeatureContainerTemplate").cloneNode(true);
+      let Fid = "feature-container-" + i.toString();
+      if(mobile){
+        NewFeatureNode = document.getElementById("FeatureContainerTemplateMobile").cloneNode(true);
+        let Fid = "feature-container-mobile-" + i.toString();
 
-    {FeatureTitle : "Guitar Macro",
-      FeatureImg : "img/LayerOfDetail 1.jpg",
-      FeatureDescription : "Make it so you can jam out to sick tunes on your way to your target",
-      FeatureStatus : "soon"},
+      }
+      NewFeatureNode.removeAttribute("hidden");
+      NewFeatureNode.setAttribute("id", Fid);
+      Fid = "#" + Fid + " ";
+      $("#FeatureListMaster").append(NewFeatureNode);
+      $(Fid + ".feature-title")[0].innerText = XMLfeatures[i].attributes.getNamedItem("title").value;
+      $(Fid + ".feature-description")[0].innerText = XMLfeatures[i].attributes.getNamedItem("subtitle").value;
+      let curPos = 0;
+      if(mobile){
+        $(Fid + ".point-scroll.left").click(
+          function (){
+            let newPos = Math.max(curPos - 275, 0);
+            console.log(newPos);
+            curPos = newPos;
+            $(Fid + ".feature-points-list").animate(
+              {scrollLeft: newPos},
+              250,
+              "swing",
+            );
+            //$(Fid + ".feature-points-list").scrollLeft(newPos);
+          });
+        $(Fid + ".point-scroll.right").click(
+          function (){
+            let newPos =Math.min(curPos + 275,  $(Fid + ".feature-points-list")[0].scrollWidth);
+            console.log(newPos);
+            curPos = newPos;
+            $(Fid + ".feature-points-list").animate(
+              {scrollLeft: newPos},
+              250,
+              "swing",
+            );
+          });
+      }
+      else{
+        $(Fid + ".point-scroll").click(function(){NextPoint(i);});
+      }
+      let points = XMLfeatures[i].getElementsByTagName("Point");
+      for(let p=0; p < points.length; p++){
+        let NewPointNode = document.getElementById("FeatureCardTemplate").cloneNode(true);
+        let Pid = Fid.substr(1).trim() + "-" + p.toString();
+        NewPointNode.removeAttribute("hidden");
+        NewPointNode.setAttribute("id", Pid);
+        $(Fid + ".feature-points-list")[0].append(NewPointNode);
+        Pid = "#" + Pid + " ";
+        if(p == 0){
+          $(Pid).addClass("first-point");
+          console.log($(Fid + "> div.feature-title-container").innerWidth());
+          if(!mobile)
+            $(Fid + ".first-point").css("margin-left", WidthOfTitleBit);
+            //$(Pid).css("margin-left", WidthOfTitleBit)//[0].setAttribute("style", "margin-left:" + WidthOfTitleBit +  "px;");
+          // $(Pid)[0].css("left-margin", $(Fid + ".feature-title-container").outerWidth());
+        }
+        $(Pid + ".feature-art")[0].setAttribute("style", "background-image:url(\"" + points[p].attributes.getNamedItem("img").value + "\");");
+        $(Pid + ".point-header")[0].innerText = points[p].attributes.getNamedItem("text").value;
+        if(p == points.length - 1){
+          $(Pid).after('<div style=\"min-width: 5px; display: inline-flex;\"></div>');
+        }
+      }
+      //$(Fid + ".feature-points-list").after('<div style=\"min-width: 5px; display: inline-flex;\"></div>');
+    }
+  }
+  let finishedAnimating = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true,];
+  function NextPoint(Feature) {
+    if(finishedAnimating[Feature]){
+      finishedAnimating[Feature] = false;
+      let Featid = "feature-container-" + Feature;
+      Featid = "#" + Featid + " ";
+      let FirstElement = $(Featid + " .first-point");
+      FirstElement.removeClass("first-point");
+        let LastElement = FirstElement[0].cloneNode(true);
+        LastElement.removeAttribute("style");
+        $(LastElement).removeClass("first-point");
+        $(Featid + ".feature-points-list")[0].appendChild(LastElement);
+        $($(Featid + ".feature-points-list").children()[1]).addClass("first-point");
 
-    {FeatureTitle : "Minimap and Wayfinding",
-      FeatureImg : "img/LayerOfDetail 1.jpg",
-      FeatureDescription : "Overlaying a small map and compass in the corner of the screen to help you see your immediate surroundings without having to hit G",
-      FeatureStatus : "soon"},
+        let cardWidth = $(LastElement).width();
 
-    {FeatureTitle : "Player tracking",
-      FeatureImg : "img/LayerOfDetail 1.jpg",
-      FeatureDescription : "Get alerts when an enemy clan comes online, keep track of your enemies changing usernames, and view trends in your target's online hours so you can attack when they least expect it",
-      FeatureStatus : "soon"},
+        $(FirstElement).animate(
+          {
+            //left: "200px",
+            marginLeft:  (WidthOfTitleBit - cardWidth - 32)
+          },
+          250,
+          "swing",
+          function(){
 
-  ];
-  for(let x = 0; x < features.length; x = x + 1){
-    let i = x;
-    console.log(i);
-    //let newElement = document.createElement("div");
-    //newElement.id = "featurebox-" + i.toString();
-    //newElement.className = "featurebox";
-    //document.getElementById("fholder").appendChild(newElement);
-    //$("#PageBody").add(newElement)
+            $(Featid + ".first-point").css("margin-left", WidthOfTitleBit);
+            FirstElement.remove();
+            finishedAnimating[Feature]=true;
+          }
 
-    $("#featurebox-" + i + " #fc-blank-title").text(features[i].FeatureTitle);
-    $("#featurebox-" + i + " #fc-blank-title").attr("id", "fc-title-" + i.toString());
-
-    $("#featurebox-" + i + " #fc-blank-description").text(features[i].FeatureDescription);
-    $("#featurebox-" + i + " #fc-blank-description").attr("id", "fc-description-" + i.toString());
+        );
 
 
+    }
 
-    $("#featurebox-" + i + " #fc-blank-image").style = "url(" + features[i].FeatureImg + ")";
-    $("#featurebox-" + i + " #fc-blank-image").attr("id","fc-image-" + i.toString());
-
-
-    $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).addClass("feature-active-icon");
-    $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).attr("id", "status-" + features[i].FeatureStatus + i.toString());
-
-    $("#featurebox-" + i + " #status-later").removeAttr("id");
-    $("#featurebox-" + i + " #status-soon").removeAttr("id");
-    $("#featurebox-" + i + " #status-done").removeAttr("id");
 
 
   }
+  var xml = XMLLoading();
+  console.log(xml);
+
+  GenerateFeaturesFromXml();
+
+
+
+
+  // const features = [
+  //   {FeatureTitle : "Painting!",
+  //     FeatureImg : "img/LayerOfDetail 1.jpg",
+  //     FeatureDescription : "Allows you to create paintings from image files in under 5 minutes",
+  //     FeatureStatus : "done"},
+  //
+  //   {FeatureTitle : "Custom Map Markers",
+  //     FeatureImg : "img/LayerOfDetail 1.jpg",
+  //     FeatureDescription : "Records the position of your screenshots and allows you to add notes to your map that will be overlayed on your regular map whenever you hit G",
+  //     FeatureStatus : "soon"},
+  //
+  //   {FeatureTitle : "Loot Highlighting",
+  //     FeatureImg : "img/LayerOfDetail 1.jpg",
+  //     FeatureDescription : "Will highlight red any loot in your inventory that is lower value than the loot chest you are looking at and highlight green any high-value loot you should prioritize",
+  //     FeatureStatus : "soon"},
+  //
+  //   {FeatureTitle : "Guitar Macro",
+  //     FeatureImg : "img/LayerOfDetail 1.jpg",
+  //     FeatureDescription : "Make it so you can jam out to sick tunes on your way to your target",
+  //     FeatureStatus : "soon"},
+  //
+  //   {FeatureTitle : "Minimap and Wayfinding",
+  //     FeatureImg : "img/LayerOfDetail 1.jpg",
+  //     FeatureDescription : "Overlaying a small map and compass in the corner of the screen to help you see your immediate surroundings without having to hit G",
+  //     FeatureStatus : "soon"},
+  //
+  //   {FeatureTitle : "Player tracking",
+  //     FeatureImg : "img/LayerOfDetail 1.jpg",
+  //     FeatureDescription : "Get alerts when an enemy clan comes online, keep track of your enemies changing usernames, and view trends in your target's online hours so you can attack when they least expect it",
+  //     FeatureStatus : "soon"},
+  //
+  // ];
+  // let FeatureCardTemplate = $("#blank-feature-card");
+  // FeatureCardTemplate.attr("id", "blank-feature-card-" + (1).toString());
+  // for(let x = 0; x < features.length; x = x + 1){
+  //   let i = x;
+  //   console.log(i);
+  //   let newFeature = FeatureCardTemplate.cloneNode(true);
+  //   newFeature.attr("id", "feature-card-" + i.toString());
+  //   newFeature.
+  //
+  //   //let newElement = document.createElement("div");
+  //   //newElement.id = "featurebox-" + i.toString();
+  //   //newElement.className = "featurebox";
+  //   //document.getElementById("fholder").appendChild(newElement);
+  //   //$("#PageBody").add(newElement)
+  //
+  //   $("#featurebox-" + i + " #fc-blank-title").text(features[i].FeatureTitle);
+  //   $("#featurebox-" + i + " #fc-blank-title").attr("id", "fc-title-" + i.toString());
+  //
+  //   $("#featurebox-" + i + " #fc-blank-description").text(features[i].FeatureDescription);
+  //   $("#featurebox-" + i + " #fc-blank-description").attr("id", "fc-description-" + i.toString());
+  //
+  //
+  //
+  //
+  //   $("#featurebox-" + i + " #fc-blank-image").style = "url(" + features[i].FeatureImg + ")";
+  //   $("#featurebox-" + i + " #fc-blank-image").attr("id","fc-image-" + i.toString());
+  //
+  //
+  //   $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).addClass("feature-active-icon");
+  //   $("#featurebox-" + i + " #status-" + features[i].FeatureStatus).attr("id", "status-" + features[i].FeatureStatus + i.toString());
+  //
+  //   $("#featurebox-" + i + " #status-later").removeAttr("id");
+  //   $("#featurebox-" + i + " #status-soon").removeAttr("id");
+  //   $("#featurebox-" + i + " #status-done").removeAttr("id");
+
+
+  //}
 
 
 

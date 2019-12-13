@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FeatureList>
+  <Feature
+    number="1"
+    name="Painting"
+    title="Make Paintings!"
+    subtitle="Turn real image files into rust paintings quickly and easily"
+    longdesc="Over 2000 different colours and XL paintings in under 5 minutes, you can say goodbye to Rustangelo and get better quality is less time. Over 4000 lines of code, our
+              algorithm is unparalleled. Plus we can select 2000 different colours using a pixel perfect trick discovered by u/Breezebuilder. Whether your covering your enemies base in
+              lewd images of their mother, or decorating your own with your sick clan logo, this will get the job done with speed and quality."
+    ThumbnailImage="img/default.jpg">
+    <Point img="Features/img/HDPrint.webp" text="High quality Paintings">
+    </Point>
+    <Point img="Features/img/RPRustangeloComparison.webp" text="Faster (and higher quality) than Rustangelo">
+    </Point>
+    <Point img="Features/img/PaintingUI.webp" text="Intuitive UI to customize level of detail">
+    </Point>
+  </Feature>
+  <Feature
+    number="1"
+    name="Painting"
+    title="Custom Maps!"
+    subtitle="Keep track of enemy bases, raid targets, and farming locations. Tag locations with screenshots, icons, text, or drawings!"
+    longdesc="Keep track of enemy bases, good raid targets, or good farming locations.
+    Screenshots will be recorded on your map, along with any text you want to add and a
+    customizable icon. Or just get out the crayons and draw to your hearts content!"
+    ThumbnailImage="img/default.jpg">
+    <Point img="Features/img/map-icon-demo.webp" text="Add icons and notes to different locations">
+    </Point>
+    <Point img="Features/img/basic-screenshot.webp" text="Automatically tracks screenshots, deaths, and bag locations">
+    </Point>
+    <Point img="Features/img/Full-map-image.webp" text="Tracks where you've been and overlays onto the normal map">
+    </Point>
+  </Feature>
+</FeatureList>
