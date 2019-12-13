@@ -148,7 +148,7 @@
         }
         $(Pid + ".feature-art")[0].setAttribute("style", "background-image:url(\"" + points[p].attributes.getNamedItem("img").value + "\");");
         $(Pid + ".point-header")[0].innerText = points[p].attributes.getNamedItem("text").value;
-        if(p == points.length - 1){
+        if(p == points.length - 1 && mobile){
           $(Pid).after('<div style=\"min-width: 5px; display: inline-flex;\"></div>');
         }
       }
