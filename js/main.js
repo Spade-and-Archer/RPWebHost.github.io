@@ -16,6 +16,7 @@ function OnBodyLoad(){
     }
   }
   LoadFeatures();
+  scrollBy(0, -1000);
 }
 
 window.onscroll = function() {scrollFunction()};
