@@ -5,17 +5,21 @@ function OnBodyLoad(){
   function ShrinkTitleBarOnLoad(){
     NavBarElement = document.getElementById("desktop-nav-bar");
     console.log(screen.availWidth);
+    if($("#main-body")[0].clientWidth < 1000){
+      document.getElementById("LongTitleBarLogo").classList.add("invisible");
+      document.getElementById("ShortTitleBarLogo").hidden = false;
+    }
     if(screen.availWidth < 600){
       mobile = true;
       NavBarElement = document.getElementById("mobile-nav-bar");
-      document.getElementById("LongTitleBarLogo").classList.add("invisible");
-      document.getElementById("ShortTitleBarLogo").hidden = false;
+
       document.getElementById("navigation-tabs").classList.add("invisible");
       document.getElementById("navigation-tabs-2").classList.add("invisible");
       document.getElementById("mobile-nav-bar").classList.remove("invisible");
     }
   }
   LoadFeatures();
+  $("#FAQBody").load("html/FAQSection.html");
   //scrollBy(0, -10000);
 }
 

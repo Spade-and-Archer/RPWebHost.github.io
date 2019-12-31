@@ -1,0 +1,41 @@
+#FAQBody{
+  align-content: center;
+  display: block;
+  text-align: center;
+}
+
+.FAQBullet{
+  min-width: 300px;
+  max-width: 800px;
+  width: 70%;
+  margin:auto;
+  text-align: Left;
+
+}
+.FAQTitle{
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.8rem;
+
+  font-weight: 500;
+  letter-spacing: .0125em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  padding: 8px;
+  font-weight: bold;
+  opacity: 0.95;
+  padding-top: 50px;
+}
+.FAQBody{
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: .0125em;
+  text-decoration: inherit;
+  text-transform: inherit;
+  padding: 12px;
+  opacity: 90%;
+}
